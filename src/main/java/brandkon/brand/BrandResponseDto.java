@@ -4,6 +4,7 @@ public record BrandResponseDto(
         Long id,
         String name,
         String imageUrl,
-        String categoryName
+        String categoryName,
+        String guidelines
 ) {
 }

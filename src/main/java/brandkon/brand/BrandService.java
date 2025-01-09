@@ -18,7 +18,8 @@ public class BrandService {
                         brand.getId(),
                         brand.getName(),
                         brand.getImageUrl(),
-                        brand.getCategory().getName() // Category name 추가
+                        brand.getCategory().getName(), // Category name 추가
+                        brand.getGuidelines() // guidelines 추가
                 ))
                 .collect(Collectors.toList());
     }
@@ -30,7 +31,8 @@ public class BrandService {
                 brand.getId(),
                 brand.getName(),
                 brand.getImageUrl(),
-                brand.getCategory().getName() // Category name 추가
+                brand.getCategory().getName(), // Category name 추가
+                brand.getGuidelines() // guidelines 추가
         );
     }
 }

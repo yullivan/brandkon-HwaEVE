@@ -1,8 +1,8 @@
 package brandkon.brand;
 
 import brandkon.category.Category;
-
 import jakarta.persistence.*;
+
 @Entity
 public class Brand {
 
@@ -14,6 +14,8 @@ public class Brand {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+
+    private String guidelines;
 
     public Long getId() {
         return id;
@@ -31,7 +33,15 @@ public class Brand {
         return category;
     }
 
+    public String getGuidelines() {
+        return guidelines;
+    }
+
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public void setGuidelines(String guidelines) {
+        this.guidelines = guidelines;
     }
 }
