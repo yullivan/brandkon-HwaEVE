@@ -7,18 +7,30 @@ import jakarta.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "product_name")
     private String productName;
+
     private int price;
+    private int expirationDays;
     private String imageUrl;
 
     @ManyToOne
     @JoinColumn(name = "brand_id")
     private Brand brand;
 
-    // Getters and Setters
+    public Product() {
+    }
+
+    public Product(String productName, int price, int expirationDays, String imageUrl, Brand brand) {
+        this.productName = productName;
+        this.price = price;
+        this.expirationDays = expirationDays;
+        this.imageUrl = imageUrl;
+        this.brand = brand;
+    }
+
     public Long getId() {
         return id;
     }
@@ -29,6 +41,10 @@ public class Product {
 
     public int getPrice() {
         return price;
+    }
+
+    public int getExpirationDays() {
+        return expirationDays;
     }
 
     public String getImageUrl() {
