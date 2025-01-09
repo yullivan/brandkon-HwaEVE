@@ -17,6 +17,16 @@ public class Brand {
 
     private String guidelines;
 
+    public Brand() {
+    }
+
+    public Brand(String name, String imageUrl, Category category, String guidelines) {
+        this.name = name;
+        this.imageUrl = imageUrl;
+        this.category = category;
+        this.guidelines = guidelines;
+    }
+
     public Long getId() {
         return id;
     }
