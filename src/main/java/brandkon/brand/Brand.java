@@ -50,8 +50,4 @@ public class Brand {
     public void setCategory(Category category) {
         this.category = category;
     }
-
-    public void setGuidelines(String guidelines) {
-        this.guidelines = guidelines;
-    }
 }
