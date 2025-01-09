@@ -2,35 +2,35 @@ package brandkon.product;
 
 import brandkon.brand.Brand;
 import jakarta.persistence.*;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import java.time.LocalDateTime;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class) // Add this to enable auditing
 public class Product {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "product_name")
     private String productName;
-
     private int price;
     private int expirationDays;
-    private String imageUrl;
 
     @ManyToOne
     @JoinColumn(name = "brand_id")
     private Brand brand;
 
-    public Product() {
-    }
+    @CreatedDate
+    private LocalDateTime createdAt; // createdDateTime
 
-    public Product(String productName, int price, int expirationDays, String imageUrl, Brand brand) {
-        this.productName = productName;
-        this.price = price;
-        this.expirationDays = expirationDays;
-        this.imageUrl = imageUrl;
-        this.brand = brand;
-    }
+    @LastModifiedDate
+    private LocalDateTime updatedAt; // modifiedDateTime
 
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -47,12 +47,16 @@ public class Product {
         return expirationDays;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
     public Brand getBrand() {
         return brand;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
     public void setBrand(Brand brand) {

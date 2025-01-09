@@ -5,6 +5,5 @@ public record ProductResponseDto(
         String brandName,
         String productName,
         int price,
-        String imageUrl,
         int expirationDays // expirationDays 추가
 ) {}
