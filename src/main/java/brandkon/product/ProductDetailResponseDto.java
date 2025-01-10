@@ -2,7 +2,7 @@ package brandkon.product;
 
 public record ProductDetailResponseDto(
         Long id,
-        String productName,
+        String name,
         int price,
         BrandDto brand,
         int expirationDays

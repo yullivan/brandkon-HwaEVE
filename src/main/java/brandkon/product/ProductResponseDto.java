@@ -3,7 +3,7 @@ package brandkon.product;
 public record ProductResponseDto(
         Long id,
         String brandName,
-        String productName,
+        String name,
         int price,
         int expirationDays
 ) {}
