@@ -5,5 +5,5 @@ public record ProductResponseDto(
         String brandName,
         String productName,
         int price,
-        int expirationDays // expirationDays 추가
+        int expirationDays
 ) {}

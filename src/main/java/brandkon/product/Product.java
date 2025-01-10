@@ -9,14 +9,14 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 
 @Entity
-@EntityListeners(AuditingEntityListener.class) // Add this to enable auditing
+@EntityListeners(AuditingEntityListener.class)
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String productName;
+    private String name;
     private int price;
     private int expirationDays;
 
@@ -25,18 +25,17 @@ public class Product {
     private Brand brand;
 
     @CreatedDate
-    private LocalDateTime createdAt; // createdDateTime
+    private LocalDateTime createdAt;
 
     @LastModifiedDate
-    private LocalDateTime updatedAt; // modifiedDateTime
+    private LocalDateTime updatedAt;
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getName() {
+        return name;
     }
 
     public int getPrice() {

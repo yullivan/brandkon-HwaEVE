@@ -24,7 +24,7 @@ public class ProductService {
                 .map(product -> new ProductResponseDto(
                         product.getId(),
                         product.getBrand().getName(),
-                        product.getProductName(),
+                        product.getName(),
                         product.getPrice(),
                         product.getExpirationDays() // expirationDays 추가
                 ))
@@ -48,7 +48,7 @@ public class ProductService {
                 .map(product -> new ProductResponseDto(
                         product.getId(),
                         product.getBrand().getName(),
-                        product.getProductName(),
+                        product.getName(),
                         product.getPrice(),
                         product.getExpirationDays() // expirationDays 추가
                 ))
@@ -65,7 +65,7 @@ public class ProductService {
 
         return new ProductDetailResponseDto(
                 product.getId(),
-                product.getProductName(),
+                product.getName(),
                 product.getPrice(),
                 new ProductDetailResponseDto.BrandDto(
                         brand.getId(),
